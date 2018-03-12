@@ -5,11 +5,11 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import { ConnectedRouter } from 'react-router-redux'
 
 const history = createBrowserHistory()
-const App = asyncComponent(() => import('./page/App'))
-const getAboutPage = asyncComponent(() => import('./page/About'))
-const getHomePage = asyncComponent(() => import('./page/Home'))
-const getNotFoundPage = asyncComponent(() => import('./page/NotFound'))
-const getCounterPage = asyncComponent(() => import('./page/Counter'))
+const App = asyncComponent(() => import(/* webpackChunkName: "App" */'./page/App'))
+const getAboutPage = asyncComponent(() => import(/* webpackChunkName: "About" */'./page/About'))
+const getHomePage = asyncComponent(() => import(/* webpackChunkName: "Home" */'./page/Home'))
+const getNotFoundPage = asyncComponent(() => import(/* webpackChunkName: "403" */'./page/NotFound'))
+const getCounterPage = asyncComponent(() => import(/* webpackChunkName: "Counter" */'./page/Counter'))
 
 const Routes = () => (
 	<ConnectedRouter history={history}>
