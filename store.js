@@ -17,8 +17,8 @@ const originalReducers = {
 const reducers = combineReducers(originalReducers)
 
 const middlewares = []
-const middleware = routerMiddleware(history)
-middlewares.push(middleware)
+// const middleware = routerMiddleware(history)
+// middlewares.push(middleware)
 if (process.env.NODE_ENV !== 'production') {
   middlewares.push(ReduxImmutableStateInvaiant())
 }
