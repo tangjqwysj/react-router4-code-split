@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch,Redirect } from 'react-router-dom'
 import asyncComponent from './AsyncComponent'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { ConnectedRouter } from 'react-router-redux'
@@ -16,8 +16,8 @@ const Routes = () => (
 		<div>
 			<App />
 			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route path='/home' component={getHomePage} />
+				<Route exact path='/' component={getHomePage} />
+				<Route path='/home' render={()=><Redirect to='/'/>}/>
 				<Route path='/about' component={getAboutPage} />
 				<Route path='/counter' component={getCounterPage} />
 				<Route component={getNotFoundPage} />
